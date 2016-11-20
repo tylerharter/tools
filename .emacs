@@ -20,6 +20,11 @@
 
 (windmove-default-keybindings)
 
+    (defun unix-file ()
+      "Change the current buffer to Latin 1 with Unix line-ends."
+      (interactive)
+      (set-buffer-file-coding-system 'iso-latin-1-unix t))
+
 (global-set-key
  (kbd "C-x c")
  (lambda ()
@@ -35,7 +40,10 @@
    (shell-command  
     (concat "chmod u+x " (buffer-file-name)))))
 
-(add-to-list 'load-path "~/emacs/go-mode.el/")
-(require 'go-mode-autoloads)
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/magit")
+(require 'magit)
 
-(setq js-indent-level 2)
+(add-to-list 'load-path "/usr/local/share/emacs")
+(require 'pyimport)
+
+(global-set-key (kbd "M-m") 'set-mark-command)
