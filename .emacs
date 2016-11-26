@@ -29,21 +29,15 @@
  (kbd "C-x c")
  (lambda ()
    (interactive)
-   (insert-file "~/main.c")))
+   (insert-file "~/git_co/tools/main.c")))
 
 (global-set-key
  (kbd "C-x p")
  (lambda ()
    (interactive)
-   (insert-file "~/main.py")
+   (insert-file "~/git_co/tools/main.py")
    (save-buffer)
    (shell-command  
     (concat "chmod u+x " (buffer-file-name)))))
-
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/magit")
-(require 'magit)
-
-(add-to-list 'load-path "/usr/local/share/emacs")
-(require 'pyimport)
 
 (global-set-key (kbd "M-m") 'set-mark-command)
