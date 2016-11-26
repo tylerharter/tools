@@ -41,3 +41,6 @@
     (concat "chmod u+x " (buffer-file-name)))))
 
 (global-set-key (kbd "M-m") 'set-mark-command)
+
+(add-to-list 'load-path "~/git_co/tools/emacs")
+(require 'go-mode-autoloads)
